@@ -17,7 +17,14 @@ var scrape = function (cb) {
                 var headNeat = head.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
                 var sumNeat = sum.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
 
+                var dateToAdd = {
+                    headline: headNeat,
+                    summary: sumNeat
+                };
+                articles.push(dateToAdd);
             }
+            cb(articles);
         });
     });
-}
+};
+module.exports = scrape;
