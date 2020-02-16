@@ -1,5 +1,5 @@
 var scrape = require("../scripts/scrape");
-var date = require("../scripts/d ate");
+var date = require("../scripts/date");
 
 var Headline = require("../models/Headline");
 
@@ -13,7 +13,7 @@ module.exports = {
             }
             Headline.collection.insertMany(acticles, {
                 ordered: false
-            }, funtion(err, docs) {
+            }, function (err, docs) {
                 cb(err, docs);
             });
         });
